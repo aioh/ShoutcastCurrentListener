@@ -1,7 +1,7 @@
 #/bin/bash
 lineapikey=Your_LINE_API_token
-cd /home/aioh/Scripts/currentListenNEWVERSION
-curl -H "Content-Type: application/json" -o "test.xml" -u trac:trac http://www.fm91bkk.com:8955/statistics
+cd /path/to/Scripts
+curl -H "Content-Type: application/json" -o "test.xml" -u trac:trac http://www.shoutcasturl.com:<PORT>/statistics
 xmllint --format test.xml > current.xml
 count=$(cat current.xml | wc -l)
 current=$(awk '{if(NR==6) print $0}' "current.xml")
